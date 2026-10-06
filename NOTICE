@@ -1,0 +1,6 @@
+GC Simulator
+
+Model and compound data by Paul Boswell, originally at the University of Minnesota; now at Upper Story LLC.
+Project support: Upper Story LLC. Original funding: NIH R01GM098290.
+
+The browser implementation uses the GC Simulator compound database and gas-transport formulas. Numerical assumptions and verification are described in public/MODEL.md.

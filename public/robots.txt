@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gcsimulator.org/sitemap.xml

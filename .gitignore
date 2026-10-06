@@ -1,0 +1,5 @@
+tests/java/**/*.class
+node_modules/
+.wrangler/
+.dev.vars
+preview/

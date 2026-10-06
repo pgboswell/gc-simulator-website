@@ -1,0 +1,1 @@
+{"name":"gc-simulator-website","private":true,"type":"module","scripts":{"test":"node tests/model.test.js && node tests/plot.test.js && node tests/site.test.js && node tests/contact.test.cjs","build":"python build_site.py"}}

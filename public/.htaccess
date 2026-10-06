@@ -1,0 +1,16 @@
+DirectoryIndex index.html
+Options -Indexes
+<IfModule mod_headers.c>
+<FilesMatch "\.(html|js|css)$">
+Header set Cache-Control "no-cache"
+</FilesMatch>
+</IfModule>
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# Temporarily retired educational resources.
+RewriteRule ^resources(?:\.html|\.php|/index\.php|/)?$ / [R=302,L]
+RewriteRule ^index\.php$ / [R=301,L]
+RewriteRule ^(simulator|resources|development|about|contact)(?:\.php|/index\.php)$ /$1.html [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(simulator|resources|development|about|contact)/?$ $1.html [L]
+</IfModule>
