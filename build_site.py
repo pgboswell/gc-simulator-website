@@ -5,12 +5,12 @@ PUBLIC=ROOT/'public'
 # Remove the retired generated page on rebuild; its source remains below.
 (PUBLIC/'resources.html').unlink(missing_ok=True)
 NAV=[('index','Home'),('simulator','Simulator'),('development','Development'),('about','About'),('contact','Contact')]
-# Two narrow Gaussian peaks, sampled finely enough to remain smooth at any size.
+# Three narrow Gaussian peaks, sampled finely enough to remain smooth at any size.
 def gaussian_logo_path():
     points = []
     for i in range(153):
         x = 3 + i / 4
-        y = 35 - 17 * math.exp(-0.5 * ((x - 14) / 0.95) ** 2) - 29 * math.exp(-0.5 * ((x - 29) / 1.05) ** 2)
+        y = 35 - 12 * math.exp(-0.5 * ((x - 11) / 0.9) ** 2) - 21 * math.exp(-0.5 * ((x - 22) / 0.95) ** 2) - 29 * math.exp(-0.5 * ((x - 33) / 1.05) ** 2)
         points.append(f'{"M" if i == 0 else "L"}{x:.2f} {y:.3f}')
     return ' '.join(points)
 
