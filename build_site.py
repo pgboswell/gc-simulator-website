@@ -10,7 +10,7 @@ def gaussian_logo_path():
     points = []
     for i in range(153):
         x = 3 + i / 4
-        y = 35 - 17 * math.exp(-0.5 * ((x - 14) / 1.55) ** 2) - 29 * math.exp(-0.5 * ((x - 29) / 1.7) ** 2)
+        y = 35 - 17 * math.exp(-0.5 * ((x - 14) / 0.95) ** 2) - 29 * math.exp(-0.5 * ((x - 29) / 1.05) ** 2)
         points.append(f'{"M" if i == 0 else "L"}{x:.2f} {y:.3f}')
     return ' '.join(points)
 
