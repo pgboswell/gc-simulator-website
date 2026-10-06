@@ -24,6 +24,8 @@ Page content is in `build_site.py`, the simulator template is in `simulator/work
 
 Publish `public/` on a static host, or use the included Cloudflare Worker (`worker.js`, `wrangler.jsonc`) for redirects and `/api/contact`. Canonical URLs use https://gcsimulator.org. Creating this repository does not deploy the site.
 
+The configuration sets `MAILGUN_DOMAIN=mg.gcsimulator.org`, `MAILGUN_REGION=US`, and `CONTACT_FROM=GC Simulator <contact@mg.gcsimulator.org>`. Dashboard variables are preserved on redeploy. Change the region to `EU` if the Mailgun domain is hosted there.
+
 To enable contact delivery, configure server-side values: `CONTACT_TO`, `CONTACT_FROM`, `MAILGUN_DOMAIN`, `MAILGUN_API_KEY`, `TURNSTILE_SITE_KEY`, and `TURNSTILE_SECRET_KEY`. Optional `MAILGUN_REGION` is `US` or `EU`. Register the GC hostname in Turnstile. Keep all credentials out of source control and public files. The form reports unavailable when the service is not configured.
 
 ## License and attribution
