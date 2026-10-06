@@ -14,6 +14,13 @@ async function readBody(request) {
   return new TextDecoder().decode(bytes);
 }
 export async function onRequest({request,env}) {
+  // Public sending settings; Cloudflare values can override these defaults.
+  env = {
+    CONTACT_FROM: 'GC Simulator <contact@mg.gcsimulator.org>',
+    MAILGUN_DOMAIN: 'mg.gcsimulator.org',
+    MAILGUN_REGION: 'US',
+    ...env
+  };
   if(request.method==='GET')return json({ready:!!configured(env),siteKey:configured(env)?env.TURNSTILE_SITE_KEY:null});
   if(request.method!=='POST')return error('Method not allowed.',405);
   const url=new URL(request.url);
